@@ -6,6 +6,7 @@ class ExchangesController < ApplicationController
     #api para enviar o form para conversão e devolver o json para ser capturado pelo
     #ajax e informar no campo result
     #teste deploy
+    #mais um teste
     value = ExchangeService.new(params[:source_currency], params[:target_currency], params[:amount]).perform
     render json: {"value": value}
   end
