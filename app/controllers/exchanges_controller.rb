@@ -10,4 +10,8 @@ class ExchangesController < ApplicationController
     value = ExchangeService.new(params[:source_currency], params[:target_currency], params[:amount]).perform
     render json: {"value": value}
   end
+  def convert_bitcoin
+    value = BitcoinService.new(params[:amount]).perform
+    render json: {"value": value}
+  end
 end
